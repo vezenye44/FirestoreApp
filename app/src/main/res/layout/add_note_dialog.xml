@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:background="@drawable/bg_dialog_add_note"
+    android:padding="20dp">
+
+    <TimePicker
+        android:id="@+id/time_tp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_date_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/choose_date_btn"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tool:text="02.03.2023"
+        android:textSize="16sp"
+        app:icon="@drawable/baseline_calendar_month_24"
+        app:iconPadding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_pressure_1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:text="Верхнее артериальное давление "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_tp" />
+
+    <TextView
+        android:id="@+id/label_pressure_value_1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="120"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/label_pressure_1_tv"
+        app:layout_constraintStart_toEndOf="@+id/label_pressure_1_tv"
+        app:layout_constraintTop_toTopOf="@+id/label_pressure_1_tv" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_pressure_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1.0"
+        android:value="120.0"
+        android:valueFrom="1.0"
+        android:valueTo="200.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_pressure_value_1_tv" />
+
+    <TextView
+        android:id="@+id/label_pressure_2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:text="Нижнее артериальное давление  "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_pressure_1" />
+
+    <TextView
+        android:id="@+id/label_pressure_value_2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="80"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/label_pressure_2_tv"
+        app:layout_constraintStart_toEndOf="@+id/label_pressure_2_tv"
+        app:layout_constraintTop_toTopOf="@+id/label_pressure_2_tv" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_pressure_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1.0"
+        android:value="80.0"
+        android:valueFrom="1.0"
+        android:valueTo="200.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_pressure_2_tv" />
+
+    <TextView
+        android:id="@+id/label_pulse_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:text="Пульс  "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_pressure_2" />
+
+    <ImageView
+        android:id="@+id/heart_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:alpha="0.5"
+        android:src="@drawable/baseline_heart_broken_24"
+        app:layout_constraintBottom_toBottomOf="@+id/label_pulse_tv"
+        app:layout_constraintStart_toEndOf="@id/label_pulse_tv"
+        app:layout_constraintTop_toTopOf="@+id/label_pulse_tv" />
+
+    <TextView
+        android:id="@+id/label_pulse_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="70"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/label_pulse_tv"
+        app:layout_constraintStart_toEndOf="@+id/heart_iv"
+        app:layout_constraintTop_toTopOf="@+id/label_pulse_tv" />
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_pulse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1.0"
+        android:value="70.0"
+        android:valueFrom="1.0"
+        android:valueTo="200.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_pulse_tv" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ok_btn"
+        style="@style/Widget.Material3.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Сохранить"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconPadding="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/cancel_btn"
+        app:layout_constraintTop_toTopOf="@+id/cancel_btn" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancel_btn"
+        style="@style/Widget.Material3.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="41dp"
+        android:text="Отмена"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:iconPadding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_pulse" />
+
+    <TextView
+        android:id="@+id/id_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:visibility="gone"
+        android:text="ID"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
